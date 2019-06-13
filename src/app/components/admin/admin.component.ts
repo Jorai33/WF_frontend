@@ -9,12 +9,23 @@ import { BlogpostService } from 'src/app/services/blogpost.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  blogposts$: Observable<Blogpost[]>;
+  /*  Première façon de s'abonner à un Observable : */
+   blogposts$: Observable<Blogpost[]>; 
+  
+  
+  /* Autre façon de s'abonner à un Observable par la méthode subscribe
+  allBlogposts: Blogpost[];*/
+
 
   constructor( private blogpostServ: BlogpostService) { }
 
   ngOnInit() {
-    this.blogposts$ = this.blogpostServ.getBlogposts();
+     this.blogposts$ = this.blogpostServ.getBlogposts();
+    // this.blogpostServ.getBlogposts()
+    // .subscribe(data => {
+    //   console.log(data);
+    //   this.allBlogposts = data;
+    // });
   }
 
 }

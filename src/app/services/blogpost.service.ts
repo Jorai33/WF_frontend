@@ -20,5 +20,9 @@ export class BlogpostService {
     return this.http.get<Blogpost>(`${this.baseUrl}/${id}`);
   }
 
+  deleteSingleBlogpost(id: string){
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
+
 
 }
