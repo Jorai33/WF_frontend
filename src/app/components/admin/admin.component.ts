@@ -27,9 +27,9 @@ export class AdminComponent implements OnInit {
   deleteBlogPosts(selectedOptions){
    const ids = selectedOptions.map(so => so.value);
    if (ids.length === 1){
-    this.blogpostServ.deleteSingleBlogpost(ids[0]).subscribe(data => this.refresh(data), err => console.error(err) );
+    this.blogpostServ.deleteSingleBlogpost(ids[0]).subscribe(data => this.refresh(data), err => this.handleError(err) );
    } else {
-     return this.blogpostServ.deleteBlogPosts(ids).subscribe((data) => this.refresh(data), err => console.error(err));
+     return this.blogpostServ.deleteBlogPosts(ids).subscribe((data) => this.refresh(data), err => this.handleError(err));
    }
    
   }
@@ -38,7 +38,11 @@ export class AdminComponent implements OnInit {
     console.log("data", data);
     this.blogpostServ.getBlogposts().subscribe(data => {
       this.allBlogposts = data;
-    })
+    });
+  }
+
+  handleError(error){
+    console.error(error);
   }
 
 }

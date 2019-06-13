@@ -10,6 +10,9 @@
 
 <mat-card>
   <mat-card-actions>
-<button mat-raised-button color="accent" (click)="deleteBlogPosts(blogposts.selectedOptions.selected)">Delete</button>
+<button mat-raised-button color="accent" 
+(click)="deleteBlogPosts(blogposts.selectedOptions.selected)"
+*ngIf="blogposts.selectedOptions.selected.length > 0"
+>Delete</button>
   </mat-card-actions>
 </mat-card>
