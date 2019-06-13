@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Projet } from "../../models/Projet";
+
 
 @Component({
   selector: 'app-projet',

@@ -10,6 +10,8 @@ import { BlogpostComponent } from './components/blogpost/blogpost.component';
 import { BlogpostListComponent } from './components/blogpost-list/blogpost-list.component';
 import { ProjetComponent } from './components/projet/projet.component';
 import { ProjetListComponent } from './components/projet-list/projet-list.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ProjetListComponent } from './components/projet-list/projet-list.compon
     BlogpostComponent,
     BlogpostListComponent,
     ProjetComponent,
-    ProjetListComponent
+    ProjetListComponent,
+    ErrorPageComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

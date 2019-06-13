@@ -1,0 +1,9 @@
+<mat-selection-list #blogposts>
+  <mat-list-option *ngFor="let bp of blogposts$ | async" [value]="bp._id">
+    {{bp.title}}
+  </mat-list-option>
+</mat-selection-list>
+
+<mat-card>
+  Blog Posts sélectionnés : {{blogposts.selectedOptions.selected.length}}
+</mat-card>
