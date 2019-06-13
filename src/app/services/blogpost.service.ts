@@ -24,5 +24,10 @@ export class BlogpostService {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
+  deleteBlogPosts( ids: string[]){
+    const allIds = ids.join(",");
+    return this.http.delete(`${this.baseUrl}/?ids=${allIds}`);
+
+  }
 
 }

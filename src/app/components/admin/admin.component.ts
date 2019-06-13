@@ -9,23 +9,36 @@ import { BlogpostService } from 'src/app/services/blogpost.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  /*  Première façon de s'abonner à un Observable : */
-   blogposts$: Observable<Blogpost[]>; 
-  
-  
-  /* Autre façon de s'abonner à un Observable par la méthode subscribe
-  allBlogposts: Blogpost[];*/
+    /*  Première façon de s'abonner à un Observable : 
+   blogposts$: Observable<Blogpost[]>; */
 
+   /* Autre façon de s'abonner à un Observable par la méthode subscribe*/
+  allBlogposts: Blogpost[];
+  
 
   constructor( private blogpostServ: BlogpostService) { }
 
   ngOnInit() {
-     this.blogposts$ = this.blogpostServ.getBlogposts();
-    // this.blogpostServ.getBlogposts()
-    // .subscribe(data => {
-    //   console.log(data);
-    //   this.allBlogposts = data;
-    // });
+    //  this.blogposts$ = this.blogpostServ.getBlogposts();
+    this.blogpostServ.getBlogposts()
+    .subscribe(data => this.refresh(data));
+  }
+
+  deleteBlogPosts(selectedOptions){
+   const ids = selectedOptions.map(so => so.value);
+   if (ids.length === 1){
+    this.blogpostServ.deleteSingleBlogpost(ids[0]).subscribe(data => this.refresh(data), err => console.error(err) );
+   } else {
+     return this.blogpostServ.deleteBlogPosts(ids).subscribe((data) => this.refresh(data), err => console.error(err));
+   }
+   
+  }
+
+  refresh(data){
+    console.log("data", data);
+    this.blogpostServ.getBlogposts().subscribe(data => {
+      this.allBlogposts = data;
+    })
   }
 
 }
