@@ -5,9 +5,11 @@ import { BlogpostListComponent } from './components/blogpost-list/blogpost-list.
 import { BlogpostComponent } from './components/blogpost/blogpost.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { UpboardComponent } from './components/upboard/upboard.component';
 
 const routes: Routes = [
-  {path : "", component: BlogpostListComponent},
+  {path : "", component: UpboardComponent},
+  {path : "blog", component: BlogpostListComponent},
   {path: "blog-posts/:id", component: BlogpostComponent },// localhost:4200/blog-posts/651515qvq
   {path: "admin", component: AdminComponent},
   {path: "**", component: ErrorPageComponent }

@@ -12,6 +12,9 @@ import { ProjetComponent } from './components/projet/projet.component';
 import { ProjetListComponent } from './components/projet-list/projet-list.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { UpboardComponent } from './components/upboard/upboard.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { AdminComponent } from './components/admin/admin.component';
     ProjetComponent,
     ProjetListComponent,
     ErrorPageComponent,
-    AdminComponent
+    AdminComponent,
+    UpboardComponent,
+       
   ],
   imports: [
     BrowserModule,

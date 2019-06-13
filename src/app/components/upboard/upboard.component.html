@@ -1,0 +1,114 @@
+<h1>Bienvenue sur votre Upboard !</h1>
+<p>Ceci est la version Bêta de notre application</p>
+
+<div class="container">
+  
+
+<mat-accordion>
+  
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Mes Documents
+      </mat-panel-title>      
+    </mat-expansion-panel-header>
+    
+    <mat-list>
+         <mat-list-item >
+       
+        <h3 mat-subheader>Ajouter un Document</h3>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3 mat-subheader>Supprimer un Document</h3>
+      </mat-list-item>
+      <mat-divider></mat-divider> <mat-list-item>
+        <h3 mat-subheader>Modifier un Document</h3>
+        
+      </mat-list-item>
+      
+    </mat-list>
+  </mat-expansion-panel>
+
+
+  
+
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Mes Projets
+      </mat-panel-title>
+      
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item >
+    
+     <h3 mat-subheader>Créer un nouvau Projet</h3>
+   </mat-list-item>
+   <mat-divider></mat-divider>
+   <mat-list-item>
+     <h3 mat-subheader>Supprimer un Projet</h3>
+   </mat-list-item>
+   <mat-divider></mat-divider> <mat-list-item>
+     <h3 mat-subheader>Modifier un Projet </h3>
+     
+   </mat-list-item>
+   
+ </mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Mes Solutions Up
+      </mat-panel-title>
+      
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item >
+    
+     <h3 mat-subheader>Voir mes Solutions</h3>
+   </mat-list-item>
+   <mat-divider></mat-divider>
+        
+   
+   
+ </mat-list>
+   
+  </mat-expansion-panel>
+
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Mes Comptes Bancaires
+      </mat-panel-title>
+     
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item >
+    
+     <h3 mat-subheader>Agréger un nouveau Compte</h3>
+   </mat-list-item>
+   <mat-divider></mat-divider>
+   <mat-list-item>
+     <h3 mat-subheader>Voir mes comptes agrégés</h3>
+   </mat-list-item>
+   
+   
+ </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>
+
+  <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel> -->
+
+
