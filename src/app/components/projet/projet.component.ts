@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Projet } from 'src/app/models/Projet';
+import { ProjetService } from 'src/app/services/projet.service';
 
 
 @Component({
@@ -7,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projet.component.css']
 })
 export class ProjetComponent implements OnInit {
+  projets$: Observable<Projet[]>;
 
-  constructor() { }
+  constructor(private projetServ: ProjetService) { }
 
   ngOnInit() {
+    this.projets$ = this.projetServ.getProjets();
   }
 
 }
