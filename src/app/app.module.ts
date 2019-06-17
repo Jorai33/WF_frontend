@@ -13,6 +13,7 @@ import { ProjetListComponent } from './components/projet-list/projet-list.compon
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { UpboardComponent } from './components/upboard/upboard.component';
+import { ProjetDetailsComponent } from './components/projet-details/projet-details.component';
 
 
 
@@ -26,6 +27,7 @@ import { UpboardComponent } from './components/upboard/upboard.component';
     ErrorPageComponent,
     AdminComponent,
     UpboardComponent,
+    ProjetDetailsComponent,
        
   ],
   imports: [

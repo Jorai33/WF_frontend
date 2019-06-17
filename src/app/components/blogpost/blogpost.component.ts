@@ -18,6 +18,7 @@ export class BlogpostComponent implements OnInit {
     
     const id = this.route.snapshot.paramMap.get("id"); // id du get correspond à la valeur passée en paramètre dans le routing
     this.blogpost$ = this.blogpostServ.getBlogpostById(id);
+    
   }
 
 }

@@ -86,7 +86,7 @@
       </mat-list>
     </mat-expansion-panel>
     
-    <mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Blog
@@ -94,7 +94,7 @@
       </mat-expansion-panel-header>
       <mat-list>
         <mat-list-item>
-          <h3 mat-subheader>Découvrir les Articles</h3>
+          <h3 mat-subheader [routerLink]="['/blog']">Découvrir les Articles</h3>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>

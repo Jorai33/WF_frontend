@@ -7,11 +7,26 @@ import { Projet } from "../models/Projet";
   providedIn: 'root'
 })
 export class ProjetService {
-  baseUrl = "http://localhost:3000/api/v1/";
+  baseUrl = "http://localhost:3000/api/v1/projets";
 
   constructor(private http: HttpClient ) { }
 
   getProjets(): Observable<Projet[]>{
-    return this.http.get<Projet[]>(`${this.baseUrl}/projets`);
+    return this.http.get<Projet[]>(`${this.baseUrl}/`);
   }
+
+  getProjetById(id : string): Observable<Projet>{
+    return this.http.get<Projet>(`${this.baseUrl}/${id}`);
+  }
+
+  deleteSingleProjet(id: string){
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
+
+  deleteProjets( ids: string[]){
+    const allIds = ids.join(",");
+    return this.http.delete(`${this.baseUrl}/?ids=${allIds}`);
+  }
+
+  
 }
