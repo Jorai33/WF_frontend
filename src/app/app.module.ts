@@ -26,6 +26,7 @@ import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButt
 import { LayoutModule } from '@angular/cdk/layout';
 import { SolutionFormComponent } from './components/solution-form/solution-form.component';
 import { ProjetCreateComponent } from './components/projet-create/projet-create.component';
+import { BlogpostCreateComponent } from './components/blogpost-create/blogpost-create.component';
 
 
 
@@ -44,7 +45,8 @@ import { ProjetCreateComponent } from './components/projet-create/projet-create.
     HomepageComponent,
     DashboardComponent,
     SolutionFormComponent,
-    ProjetCreateComponent
+    ProjetCreateComponent,
+    BlogpostCreateComponent
        
   ],
   imports: [

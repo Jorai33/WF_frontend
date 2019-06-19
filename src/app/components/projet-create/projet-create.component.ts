@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormGroupDirective} from '@angular/forms';
 import { ProjetService } from 'src/app/services/projet.service';
 
 @Component({
@@ -8,34 +8,50 @@ import { ProjetService } from 'src/app/services/projet.service';
   styleUrls: ['./projet-create.component.css']
 })
 export class ProjetCreateComponent implements OnInit {
-creationForm : FormGroup;
-  constructor(private fb : FormBuilder, private projetServ : ProjetService) { }
+  creationForm: FormGroup;
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  
+  constructor(private fb: FormBuilder, private projetServ: ProjetService) { }
 
   ngOnInit() {
     this.createForm();
-  }
-
-  createForm(){
-    this.creationForm = this.fb.group({
-      nom:"",
-      besoinsClient: ""
-
-    })
-  }
-  createProjet(){
-    if(this.creationForm.valid){
-      console.log(this.creationForm.value);
-      this.projetServ.createProjet(this.creationForm.value)
-      .subscribe(data => this.handleSuccess(data), error => this.handleError(error));
-    }
     
   }
 
-  handleSuccess(data){
-    console.log("Projet créé", data);
+  createForm() {
+    this.creationForm = this.fb.group({
+      nom: "",
+      besoinsClient: "",
+      siren : ""
+
+    });
+    // this.firstFormGroup = this.fb.group({
+      
+    //   nom: "",
+    //   besoinsClient: ""
+    // });
+    // this.secondFormGroup = this.fb.group({
+    //  
+    // });
+  }
+  createProjet(formDirective: FormGroupDirective) {
+    if (this.creationForm.valid) {
+      console.log(this.creationForm.value);
+      this.projetServ.createProjet(this.creationForm.value)
+        .subscribe(data => this.handleSuccess(data, formDirective), error => this.handleError(error));
+    }
+
   }
 
-  handleError(error){
+  handleSuccess(data, formDirective) {
+    console.log("Projet créé", data);
+    this.creationForm.reset();
+    formDirective.resetForm();
+  }
+
+  handleError(error) {
     console.error("Echec de création du projet", error);
   }
 

@@ -22,6 +22,11 @@ export class AdminComponent implements OnInit {
     //  this.blogposts$ = this.blogpostServ.getBlogposts();
     this.blogpostServ.getBlogposts()
     .subscribe(data => this.refresh(data));
+
+    this.blogpostServ.handleBlogPostCreated().subscribe(data => {
+      console.log("AdminComponent received", data);
+      this.refresh(data);
+    });
   }
 
   deleteBlogPosts(selectedOptions){
