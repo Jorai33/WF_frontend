@@ -11,6 +11,10 @@ export class ProjetService {
 
   constructor(private http: HttpClient ) { }
 
+  createProjet( projet : Projet){
+return this.http.post<Projet>(this.baseUrl, projet);
+}
+
   getProjets(): Observable<Projet[]>{
     return this.http.get<Projet[]>(`${this.baseUrl}/`);
   }

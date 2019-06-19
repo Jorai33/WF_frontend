@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjetDetailsComponent implements OnInit {
   projet$ : Observable<Projet>;
+  
 
   constructor(private projetServ : ProjetService, private route : ActivatedRoute) { }
 
@@ -23,10 +24,21 @@ export class ProjetDetailsComponent implements OnInit {
   onDeleteClick(id: string){
     if (confirm("Voulez-vous vraiment supprimer ce projet ?")){
       this.projetServ.deleteSingleProjet(id).subscribe((data) => {
-        console.log(data);
+        console.log("data", data);
       });    
     }
   }
+
+  // refresh(data){
+  //   console.log("data", data);
+  //   this.projetServ.getProjets().subscribe(data => {
+  //     this.allProjets = data;
+  //   });
+  // }
+
+  // handleError(error){
+  //   console.error(error);
+  // }
 
 }
  // onDeleteClick(){

@@ -8,12 +8,17 @@ import { AdminComponent } from './components/admin/admin.component';
 import { UpboardComponent } from './components/upboard/upboard.component';
 import { ProjetComponent } from './components/projet/projet.component';
 import { ProjetDetailsComponent } from './components/projet-details/projet-details.component';
+import { TableauDeBordComponent } from './components/tableau-de-bord/tableau-de-bord.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { SolutionFormComponent } from './components/solution-form/solution-form.component';
+import { ProjetCreateComponent } from './components/projet-create/projet-create.component';
 
 const routes: Routes = [
   {path : "", component: UpboardComponent},
   {path : "blog", component: BlogpostListComponent},
   {path: "blog-posts/:id", component: BlogpostComponent },// localhost:4200/blog-posts/651515qvq
   {path: "projet", component: ProjetComponent},
+  {path: "projet-create", component: ProjetCreateComponent},
   {path: "projets/:id", component: ProjetDetailsComponent },
   {path: "admin", component: AdminComponent},
   {path: "**", component: ErrorPageComponent }

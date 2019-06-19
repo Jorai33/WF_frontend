@@ -1,0 +1,13 @@
+<mat-card>
+  <form [formGroup]="creationForm" (submit)="createProjet()">
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="Nom du projet" required formControlName="nom">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Tu nous en dis plus sur ton client et ses besoins ?" required formControlName="besoinsClient"></textarea>
+      </mat-form-field>
+      <button mat-button type="submit" >Create</button>
+    </div>
+  </form>
+</mat-card>
