@@ -14,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatTooltipModule,
     MatChipsModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
+    
     
   ],
   exports: [
@@ -50,7 +53,8 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatTooltipModule,
     MatChipsModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   
   ]
 })

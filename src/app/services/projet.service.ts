@@ -15,6 +15,10 @@ export class ProjetService {
 return this.http.post<Projet>(this.baseUrl, projet);
 }
 
+uploadDocument(formData: FormData){
+  return this.http.post<any>(`${this.baseUrl}/documents`, formData);
+}
+
   getProjets(): Observable<Projet[]>{
     return this.http.get<Projet[]>(`${this.baseUrl}/`);
   }

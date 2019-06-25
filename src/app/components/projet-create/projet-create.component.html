@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
   <form [formGroup]="creationForm" #formDirective="ngForm" (submit)="createProjet(formDirective)">
     <div class="example-container">
       <mat-form-field>
@@ -10,7 +10,10 @@
       <button mat-button type="submit" >Create</button>
     </div>
   </form>
-</mat-card>
+</mat-card> -->
+
+
+
 
 <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
   {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
@@ -18,7 +21,7 @@
 
 <!-- <mat-step [stepControl]="firstFormGroup"> -->
 
-<!-- 
+
   <form [formGroup]="creationForm" #formDirective="ngForm" >
   <mat-horizontal-stepper  [linear]="isLinear">
     
@@ -31,6 +34,11 @@
         <textarea matInput placeholder="Tu nous en dis plus sur ton client et ses besoins ?"
           formControlName="besoinsClient" required></textarea>
       </mat-form-field>
+      
+      <label for="image">Ajouter un document</label>
+      <input type="file" name="document" id="document" formControlName="document">
+      <button type="button" mat-button (click)="upload()">Upload Document</button>
+    
       <div>
         <button mat-button matStepperNext type="button">Next</button>
       </div>
@@ -41,51 +49,96 @@
         <mat-form-field>
           <input matInput placeholder="SIREN" formControlName="siren" required>
         </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Nom Entreprise" formControlName="nomEntreprise" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Adresse Entreprise" formControlName="adresseEntreprise" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="CP Entreprise" formControlName="codePostalEntreprise" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Ville Entreprise" formControlName="villeEntreprise" >
+        </mat-form-field>
+        
+        
+        <mat-form-field>
+          <input matInput placeholder="Nom Dirigeant" formControlName="nomDirigeant" required >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Prénom " formControlName="prenomDirigeant">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Adresse" formControlName="adresse" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Code Postal" formControlName="codePostal" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Ville" formControlName="ville" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Téléphone" formControlName="telephone" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
         <div>
           <button mat-button matStepperPrevious type="button">Back</button>
           <button mat-button matStepperNext type="button">Next</button>
         </div>
 
     </mat-step>
+    
     <mat-step>
         <ng-template matStepLabel>Synthèse</ng-template>
        
         <div>
-          <button mat-button matStepperPrevious type="button">Back</button> -->
+          <button mat-button matStepperPrevious type="button">Back</button> 
           <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
-          <!-- <button mat-button (click)="createProjet(formDirective)">Create</button>
+          
+         <button data-toggle="modal" data-target="#exampleModalCenter" mat-button >Create</button>
         </div>
+        <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Logo Wefinup</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Votre demande de financement a bien été prise en compte
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Reprendre la saisie</button>
+        
+        <button type="button" class="btn btn-primary" (click)="createProjet(formDirective)">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        <!-- <li>
+          <button mat-raised-button (click)="openDialog()">Pick one</button>
+        </li> -->
+      
       </mat-step>
 
 
   </mat-horizontal-stepper>
 
-  </form> -->
-
-
-
-
-
-
-  <!-- </mat-step> -->
-<!-- <mat-step [stepControl]="secondFormGroup">
-  <form [formGroup]="secondFormGroup">
-    <ng-template matStepLabel>Entreprise</ng-template>
-    <mat-form-field>
-      <input matInput placeholder="SIREN" formControlName="siren" required>
-    </mat-form-field>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>Next</button>
-    </div>
   </form>
-</mat-step>
-<mat-step>
-  <ng-template matStepLabel>Synthèse</ng-template>
-  <button mat-button type="submit">Create</button>
-  <div>
-    <button mat-button matStepperPrevious>Back</button>
-    <button mat-button (click)="stepper.reset()">Reset</button>
-  </div>
-</mat-step>
-</mat-horizontal-stepper> -->
+
+
+
+
+

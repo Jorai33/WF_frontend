@@ -7,8 +7,13 @@
       <mat-form-field>
         <input matInput placeholder="sub-title" formControlName="subTitle" required>
       </mat-form-field>
-     
-     
+      <mat-form-field>
+        <textarea matInput placeholder="content" formControlName="content" required></textarea>
+      </mat-form-field>
+      <label for="image">Choose image</label>
+      <input type="file" name="image" id="image" formControlName="image">
+      <button type="button" mat-button (click)="upload()">Upload Image</button>
+
       <button mat-button type="submit">create blog post</button>
     </div>
   </form>

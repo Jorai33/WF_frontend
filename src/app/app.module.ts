@@ -27,6 +27,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { SolutionFormComponent } from './components/solution-form/solution-form.component';
 import { ProjetCreateComponent } from './components/projet-create/projet-create.component';
 import { BlogpostCreateComponent } from './components/blogpost-create/blogpost-create.component';
+import { BlogpostEditComponent } from './components/blogpost-edit/blogpost-edit.component';
 
 
 
@@ -46,7 +47,8 @@ import { BlogpostCreateComponent } from './components/blogpost-create/blogpost-c
     DashboardComponent,
     SolutionFormComponent,
     ProjetCreateComponent,
-    BlogpostCreateComponent
+    BlogpostCreateComponent,
+    BlogpostEditComponent
        
   ],
   imports: [

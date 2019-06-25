@@ -10,7 +10,7 @@ import { BlogpostService } from "../../services/blogpost.service";
 })
 export class BlogpostCreateComponent implements OnInit {
   creationForm: FormGroup;  
-  // htmlContent = '';
+  
 
   constructor(private fb: FormBuilder, private blogpostService: BlogpostService, private el: ElementRef) { }
 
@@ -25,6 +25,17 @@ export class BlogpostCreateComponent implements OnInit {
       content: '',
       image: ''
     });
+  }
+
+  upload(){
+    // retrieve file upload HTML Tag
+    let inputEl: HTMLInputElement = this.el.nativeElement.querySelector("#image");
+    let fileCount: number = inputEl.files.length;
+   if(fileCount > 0){
+     let formData = new FormData();
+     formData.append("image", inputEl.files.item(0));
+     this.blogpostService.uploadImage(formData).subscribe(data => console.log(data), error => console.error(error));
+   }
   }
 
   

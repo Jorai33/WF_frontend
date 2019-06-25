@@ -2,13 +2,40 @@
   <mat-card-header class="no-margin">
     
     <mat-card-title>{{projet.nom}}</mat-card-title>
-    <mat-card-subtitle>Montant de la demande : {{projet.montantDemande | currency:"EUR"}}</mat-card-subtitle>
+    <!-- <mat-card-subtitle>Montant de la demande : {{projet.montantDemande | currency:"EUR"}}</mat-card-subtitle> -->
+    <mat-card-subtitle>Nom Entreprise : {{projet.nomEntreprise }}</mat-card-subtitle>
   </mat-card-header>
  
   <mat-card-content>
-    <p>
+    <!-- <p>
     Etat d'avancement de votre demande : <br> {{projet.etatProjet}}
+    </p> -->
+    <p>
+      SIREN : {{projet.siren}}
     </p>
+    <p>
+      Adresse : {{projet.adresseEntreprise}}
+    </p>
+    <p>
+      Prénom : {{projet.prenomDirigeant}}
+    </p>
+    <p>
+      Nom : {{projet.nomDirigeant}}
+    </p>
+    <p>
+      Email : {{projet.email}}
+    </p>
+    <p>
+      Téléphone : {{projet.telephone}}
+    </p>
+    <p>
+      Adresse : {{projet.adresse}}
+    </p>
+    <p>
+        Document : <a [href]="documentPath + projet.document">{{projet.document}}</a>
+      
+    </p>
+    
   </mat-card-content>
   <button mat-raised-button color="accent" (click)="onDeleteClick(projet._id)" class="btn btn-danger">Supprimer Projet</button>
 </mat-card>  

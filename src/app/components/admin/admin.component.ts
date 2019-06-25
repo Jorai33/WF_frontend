@@ -40,7 +40,7 @@ export class AdminComponent implements OnInit {
   }
 
   refresh(data){
-    console.log("data", data);
+    //console.log("data", data);
     this.blogpostServ.getBlogposts().subscribe(data => {
       this.allBlogposts = data;
     });

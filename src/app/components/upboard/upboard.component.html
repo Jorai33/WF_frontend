@@ -523,7 +523,7 @@
                             <tbody>
                                 <tr *ngFor="let projet of projetList$ | async">
 
-                                    <td>{{projet.dateDemandeFinancement}}</td>
+                                    <td>{{projet.dateDemandeFinancement | date }}</td>
                                     <td [routerLink]="['/projets', projet._id]">{{projet.nom}}</td>
                                     <td>{{projet.etatProjet}}</td>
                                 </tr>

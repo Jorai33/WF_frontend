@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Projet } from 'src/app/models/Projet';
 import { ProjetService } from 'src/app/services/projet.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { environment } from "../../../environments/environment";
 @Component({
   selector: 'app-projet-details',
   templateUrl: './projet-details.component.html',
@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjetDetailsComponent implements OnInit {
   projet$ : Observable<Projet>;
+  documentPath = environment.docPath;
   
 
   constructor(private projetServ : ProjetService, private route : ActivatedRoute) { }
