@@ -8,9 +8,10 @@
       <mat-form-field>
         <input matInput placeholder="subtitle" [(ngModel)]="bp.subtitle" name="subtitle"  required>
       </mat-form-field>
-      <mat-form-field>
+      <!-- <mat-form-field>
         <textarea matInput placeholder="content" [(ngModel)]="bp.content" name="content"  required ></textarea>
-      </mat-form-field>
+      </mat-form-field> -->
+      <app-ngx-editor [placeholder]="'Enter text here'" [spellcheck]="true" [(ngModel)]="bp.content" name="content"> </app-ngx-editor>
       <label for="image">Choose image</label>
       <input type="file" name="image" id="image">
       <button type="button" mat-button (click)="upload()">Upload Image</button>

@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
-
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { NgxEditorModule } from "ngx-editor";
 
 
 
@@ -22,8 +25,7 @@ import { ProjetDetailsComponent } from './components/projet-details/projet-detai
 import { TableauDeBordComponent } from './components/tableau-de-bord/tableau-de-bord.component';
 import { HomepageComponent } from "./components/homepage/homepage.component";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
-import { LayoutModule } from '@angular/cdk/layout';
+
 import { SolutionFormComponent } from './components/solution-form/solution-form.component';
 import { ProjetCreateComponent } from './components/projet-create/projet-create.component';
 import { BlogpostCreateComponent } from './components/blogpost-create/blogpost-create.component';
@@ -64,7 +66,8 @@ import { BlogpostEditComponent } from './components/blogpost-edit/blogpost-edit.
     MatButtonModule,
     LayoutModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
