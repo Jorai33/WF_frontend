@@ -1,3 +1,26 @@
-<p>
-  blogpost-edit works!
-</p>
+<mat-card *ngIf="blogpost as bp; else loading">
+  <form  #formDirective="ngForm" (submit)="updateBlogpost(formDirective)">
+
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="title" [(ngModel)]="bp.title" name="title"  required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="subtitle" [(ngModel)]="bp.subtitle" name="subtitle"  required>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="content" [(ngModel)]="bp.content" name="content"  required ></textarea>
+      </mat-form-field>
+      <label for="image">Choose image</label>
+      <input type="file" name="image" id="image">
+      <button type="button" mat-button (click)="upload()">Upload Image</button>
+      <button mat-button type="submit" [disabled]="!formDirective.form.valid">Update blog post</button>
+    </div>
+
+
+  </form>
+</mat-card>
+
+<ng-template #loading>
+  Loading...
+</ng-template>

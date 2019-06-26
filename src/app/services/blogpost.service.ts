@@ -36,6 +36,10 @@ export class BlogpostService {
     return this.http.get<Blogpost>(`${this.baseUrl}/${id}`);
   }
 
+  updateBlogpost(id: string, blogpost: Blogpost){
+    return this.http.put(`${this.baseUrl}/${id}`, blogpost);
+  }
+
   deleteSingleBlogpost(id: string){
     return this.http.delete(`${this.baseUrl}/${id}`);
   }

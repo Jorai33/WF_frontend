@@ -12,6 +12,7 @@ import { TableauDeBordComponent } from './components/tableau-de-bord/tableau-de-
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { SolutionFormComponent } from './components/solution-form/solution-form.component';
 import { ProjetCreateComponent } from './components/projet-create/projet-create.component';
+import { BlogpostEditComponent } from './components/blogpost-edit/blogpost-edit.component';
 
 const routes: Routes = [
   {path : "", component: UpboardComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: "projet-create", component: ProjetCreateComponent},
   {path: "projets/:id", component: ProjetDetailsComponent },
   {path: "admin", component: AdminComponent},
+  {path: "admin/blog-posts/:id", component: BlogpostEditComponent},
   {path: "**", component: ErrorPageComponent }
 ];
 

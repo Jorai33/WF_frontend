@@ -21,7 +21,7 @@ export class BlogpostCreateComponent implements OnInit {
   createForm() {
     this.creationForm = this.fb.group({
       title: '',
-      subTitle: '',
+      subtitle: '',
       content: '',
       image: ''
     });
